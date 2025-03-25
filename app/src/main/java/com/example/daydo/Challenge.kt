@@ -1,7 +1,8 @@
 package com.example.daydo
 
 data class Challenge(
-    val name: String,
-    val description: String,
-    val date: String
+    var name: String,
+    var description: String,
+    var date: String,
+    var isCompleted: Boolean = false
 )

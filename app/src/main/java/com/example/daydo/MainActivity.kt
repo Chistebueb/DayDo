@@ -231,7 +231,14 @@ class MainActivity : AppCompatActivity() {
             setOnClickListener {
                 dailyChallenge.isCompleted = true
                 prefs.edit().putBoolean(KEY_CURRENT_CHALLENGE_COMPLETED, true).apply()
+
+                addChallengeToCompleted(prefs, dailyChallenge)
+
+                val currentStreak = prefs.getInt(KEY_STREAK, 0)
+                prefs.edit().putInt(KEY_STREAK, currentStreak + 1).apply()
+
                 saveCurrentChallenge(prefs, dailyChallenge)
+
                 startActivity(Intent(this@MainActivity, ResultActivity::class.java))
                 finish()
             }

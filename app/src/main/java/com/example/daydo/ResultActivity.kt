@@ -182,6 +182,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
 
+
     private fun parseCompletedChallenges(jsonString: String): List<Challenge> {
         val challenges = mutableListOf<Challenge>()
         try {
